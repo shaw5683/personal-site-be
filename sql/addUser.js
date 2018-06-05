@@ -1,7 +1,5 @@
 const query = require('./index');
 
-module.exports = () => {
-	query('insert into user(name, sex) values("shaw", "男")').catch(err => {
-		console.log(err);
-	});
+module.exports = params => {
+	return query(`insert into user(id, username, password, sex, phone, email) values('${params.id}', '${params.username}', '${params.password}', '${params.sex}', '${params.phoneNumber}', '${params.email}')`);
 };
